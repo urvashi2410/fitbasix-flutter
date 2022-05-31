@@ -14,7 +14,7 @@ class LowerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 200,
       width: 180,
       decoration: BoxDecoration(
           color: colors.cardColor,

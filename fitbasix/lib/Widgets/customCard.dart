@@ -19,7 +19,7 @@ class CustomCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(4),
       child: Container(
-        height: 195,
+        height: 210,
         width: 180,
         decoration: BoxDecoration(
             color: colors.cardColor,
@@ -32,7 +32,7 @@ class CustomCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Flexible(
                     child: Text(

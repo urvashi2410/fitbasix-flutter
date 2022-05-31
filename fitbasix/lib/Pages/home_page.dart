@@ -16,16 +16,69 @@ class HomePage extends StatelessWidget {
       backgroundColor: colors.bottomNavColor,
       body: SingleChildScrollView(
         child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 50),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Column(
-                      
-                    )
-                  ],
-                )
+                Container(
+                  height: 70,
+                  color: colors.cardColor,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "You can take a lot more out of it",
+                              style: TextStyle(
+                                color: colors.cardTextColor,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 6,
+                            ),
+                            Text(
+                              "Start with our demo Plan",
+                              style: TextStyle(
+                                color: colors.cardTextColor,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(6.0),
+                              child: Container(
+                                padding: EdgeInsets.all(8),
+                                // height: 18,
+                                // width: 30,
+                                child: Text(
+                                  'Take Demo',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(7),
+                                  color: colors.takeDemoButton,
+                                ),
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -36,10 +89,9 @@ class HomePage extends StatelessWidget {
                           Text(
                             "Today",
                             style: TextStyle(
-                              color: colors.cardTextColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16
-                            ),
+                                color: colors.cardTextColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
                           ),
                         ],
                       ),
@@ -48,15 +100,17 @@ class HomePage extends StatelessWidget {
                           Text(
                             "Apr 21",
                             style: TextStyle(
-                              color: colors.cardTextColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16
-                            ),
+                                color: colors.cardTextColor,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
                           ),
                         ],
                       )
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: 15,
                 ),
                 Row(
                   children: const [

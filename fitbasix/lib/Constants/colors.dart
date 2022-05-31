@@ -8,4 +8,5 @@ class colors {
   static Color cardTextColor = const Color.fromRGBO(223, 223, 223, 1);
   static Color caloriesColor = const Color.fromRGBO(88, 88, 88, 1);
   static Color largeTxtColor = const Color.fromRGBO(190, 190, 190, 1);
+  static Color takeDemoButton = const Color.fromRGBO(83, 174, 81, 1);
 }
