@@ -14,15 +14,15 @@ class LowerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: MediaQuery.of(context).size.width / 1.8,
       width: 180,
       decoration: BoxDecoration(
           color: colors.cardColor,
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(10),
           )),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             Row(
@@ -38,7 +38,7 @@ class LowerCard extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Row(
@@ -54,14 +54,14 @@ class LowerCard extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
-                  children: [
+                  children: const [
                     Intakes(
                       img: 'assets/Images/carbs.jpg',
                       name: "Carbs",
@@ -71,7 +71,7 @@ class LowerCard extends StatelessWidget {
                   ],
                 ),
                 Column(
-                  children: [
+                  children: const [
                     Intakes(
                       img: 'assets/Images/protien.png',
                       name: "Protien",
@@ -81,7 +81,7 @@ class LowerCard extends StatelessWidget {
                   ],
                 ),
                 Column(
-                  children: [
+                  children: const [
                     Intakes(
                       img: 'assets/Images/fat.jpg',
                       name: "Fat",

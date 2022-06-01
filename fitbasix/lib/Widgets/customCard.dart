@@ -1,17 +1,25 @@
-import 'package:fitbasix/Constants/colors.dart';
+import 'package:fitbasix/Widgets/gauge.dart';
+import 'package:fitbasix/Widgets/water.dart';
 import 'package:flutter/material.dart';
+
+// import 'package:fitbasix/Animation/wave.dart';
+import 'package:fitbasix/Constants/colors.dart';
 
 class CustomCard extends StatelessWidget {
   final String upperTxt;
   final String upperImg;
   final String lowerTxt;
   final IconData icon;
+  final bool isWave;
+  final int pointer;
   const CustomCard({
     Key? key,
     required this.upperTxt,
     required this.upperImg,
     required this.lowerTxt,
     required this.icon,
+    required this.isWave,
+    this.pointer = 0,
   }) : super(key: key);
 
   @override
@@ -19,13 +27,14 @@ class CustomCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(4),
       child: Container(
-        height: 210,
+        height: MediaQuery.of(context).size.width / 1.8,
         width: 180,
         decoration: BoxDecoration(
-            color: colors.cardColor,
-            borderRadius: BorderRadius.all(
-              Radius.circular(10),
-            )),
+          color: colors.cardColor,
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -38,12 +47,13 @@ class CustomCard extends StatelessWidget {
                     child: Text(
                       upperTxt,
                       style: TextStyle(
-                          height: 1.5,
-                          letterSpacing: 1.0,
-                          color: colors.cardTextColor,
-                          fontSize: 16,
-                          fontFamily: "Google Sans",
-                          fontWeight: FontWeight.bold),
+                        height: 1.5,
+                        letterSpacing: 1.0,
+                        color: colors.cardTextColor,
+                        fontSize: 16,
+                        fontFamily: "Google Sans",
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   Image.asset(
@@ -54,15 +64,14 @@ class CustomCard extends StatelessWidget {
                   )
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Image.asset(
-                  //   height: 50,
-                  //   width: 50,
-                  // )
-                ],
-              ),
+              isWave
+                  ?  Expanded(
+                      child: WaterWidget(),
+                    )
+                  : Expanded(
+                      child: Gauge(
+                      pointer: pointer,
+                    )),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

@@ -1,8 +1,6 @@
 import 'dart:ffi';
-
-import 'package:fitbasix/Widgets/customCard.dart';
-import 'package:fitbasix/Widgets/lowerCard.dart';
 import 'package:flutter/material.dart';
+import 'package:fitbasix/Widgets/widgets.dart';
 import 'package:fitbasix/Constants/colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,7 +14,9 @@ class HomePage extends StatelessWidget {
       backgroundColor: colors.bottomNavColor,
       body: SingleChildScrollView(
         child: Padding(
-            padding: const EdgeInsets.only(top: 50),
+            padding: const EdgeInsets.only(
+              top: 50,
+            ),
             child: Column(
               children: [
                 Container(
@@ -80,69 +80,78 @@ class HomePage extends StatelessWidget {
                   height: 15,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
                     children: [
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Today",
-                            style: TextStyle(
-                                color: colors.cardTextColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                          Column(
+                            children: [
+                              Text(
+                                "Today",
+                                style: TextStyle(
+                                    color: colors.cardTextColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                "Apr 21",
+                                style: TextStyle(
+                                    color: colors.cardTextColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        children: const [
+                          Expanded(
+                            child: CustomCard(
+                              isWave: true,
+                              upperTxt: 'Water Consumed',
+                              upperImg: 'assets/Images/drop.png',
+                              lowerTxt: '0.0 ltr of 4 ltr',
+                              icon: Icons.add,
+                            ),
+                          ),
+                          Expanded(
+                            child: CustomCard(
+                              isWave: false,
+                              upperTxt: 'Calories Burned',
+                              upperImg: 'assets/Images/fire.jpg',
+                              lowerTxt: '0.0 kcal',
+                              icon: Icons.power_settings_new,
+                              pointer: 80,
+                            ),
                           ),
                         ],
                       ),
-                      Column(
-                        children: [
-                          Text(
-                            "Apr 21",
-                            style: TextStyle(
-                                color: colors.cardTextColor,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Row(
+                        children: const [
+                          Expanded(
+                            child: LowerCard(
+                              largeTxt:
+                                  '''Today's required calories consumption:''',
+                              cal: 2596,
+                            ),
                           ),
                         ],
-                      )
+                      ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  children: const [
-                    Expanded(
-                      child: CustomCard(
-                        upperTxt: 'Water Consumed',
-                        upperImg: 'assets/Images/drop.png',
-                        lowerTxt: '0.0 ltr of 4 ltr',
-                        icon: Icons.add,
-                      ),
-                    ),
-                    Expanded(
-                      child: CustomCard(
-                        upperTxt: 'Calories Burned',
-                        upperImg: 'assets/Images/fire.jpg',
-                        lowerTxt: '0.0 kcal',
-                        icon: Icons.power_settings_new,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                Row(
-                  children: const [
-                    Expanded(
-                        child: LowerCard(
-                      largeTxt: '''Today's required calories consumption:''',
-                      cal: 2596,
-                    )),
-                  ],
                 ),
               ],
             )),
